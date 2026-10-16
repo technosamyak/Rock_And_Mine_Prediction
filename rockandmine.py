@@ -8,12 +8,10 @@ from sklearn.model_selection import train_test_split
 
 
 def load_data(csv_path):
-    """Load the sonar CSV (it has no header row, so columns are 0..60)."""
-    return pd.read_csv(csv_path, header=None)
+    return pd.read_csv(sonardata.csv, header=None)
 
 
 def explore(df):
-    """Print a quick summary of the dataset."""
     print("Shape (rows, columns):", df.shape)
     print("\nClass counts (M = Mine, R = Rock):")
     print(df[60].value_counts())
@@ -22,7 +20,6 @@ def explore(df):
 
 
 def main():
-    # 1. Load the data (path is relative to this script, so it works anywhere)
     csv_path = Path(__file__).parent / "sonar_data.csv"
     sonar_data = load_data(csv_path)
     explore(sonar_data)
