@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 
 def load_data(csv_path):
-    return pd.read_csv(sonardata.csv, header=None)
+    return pd.read_csv(csv_path, header=None)
 
 
 def explore(df):
@@ -20,7 +20,7 @@ def explore(df):
 
 
 def main():
-    csv_path = Path(__file__).parent / "sonar_data.csv"
+    csv_path = Path(__file__).parent / "sonardata.csv"
     sonar_data = load_data(csv_path)
     explore(sonar_data)
 
